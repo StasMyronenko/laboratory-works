@@ -10,30 +10,27 @@ namespace second_work
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Write 3 digital number:");
-            int res = Convert.ToInt32(Console.ReadLine());
-            int[] arr = new int[3];
-            if (res > 99 && res < 1000)
+            int nn;
+            do
             {
-                for (int i = 0; i < 3; i++)
-                {
-                    arr[i] = res % 10;
-                    res /= 10;
-                }
-                if (arr[0] - arr[1] == arr[1] - arr[2])
-                {
-                    Console.WriteLine(true);
-                }
-                else
-                {
-                    Console.WriteLine(false);
-                }
-            }
-            else
+                Console.Write("Enter start number: ");
+                nn = Convert.ToInt32(Console.ReadLine());
+            } while (nn < 0);
+            int nk;
+            do
             {
-                Console.WriteLine("Error. Not 3 digital");
-            }
+                Console.Write("Enter end number: ");
+                nk = Convert.ToInt32(Console.ReadLine());
+            } while (nk < 0 && nk < nn);
 
+            double res = 1;
+            double ak;
+            for(int k = nn; k <= nk; k++)
+            {
+                ak = (Math.Pow(k, 2) + Math.Pow(-1, (Math.Pow(k, 2) + Math.Pow(-1, k) * k)) * k) / (3 * Math.Pow(k, 2) + 5);
+                res *= ak;
+            }
+            Console.WriteLine(res);
             Console.ReadLine();
         }
     }
