@@ -4,8 +4,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+/*
+ lab 3
+Даний масив розміру N. Визначити кількість інтервалів індексів, для яких його елементи монотонно зростають (спадають). 
+ */
+
 namespace work_4
 {
+
+
     class Program
     {
         static void Main(string[] args)
